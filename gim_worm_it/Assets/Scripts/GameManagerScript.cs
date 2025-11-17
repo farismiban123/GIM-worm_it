@@ -5,6 +5,10 @@ public class GameManagerScript : MonoBehaviour
     public GameObject WoodenStake;
     public float percentageToSpawnWorm = 0.1f;
 
+    public GameObject wormPrefab;
+    public GameObject antPrefab;
+    public GameObject kumbangPrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,5 +33,6 @@ public class GameManagerScript : MonoBehaviour
     void SpawnWorm()
     {
         Debug.Log("Worm spawned");
+        Instantiate(wormPrefab, new Vector3(0,0,0), Quaternion.identity);
     }
 }

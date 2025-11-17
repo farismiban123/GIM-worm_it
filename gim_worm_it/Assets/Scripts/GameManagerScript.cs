@@ -26,6 +26,11 @@ public class GameManagerScript : MonoBehaviour
         if(Random.value <= percentageToSpawnWorm)
         {
             SpawnWorm();
+            percentageToSpawnWorm = 0.1f;
+        }
+        else
+        {
+            percentageToSpawnWorm *= 1.1f;
         }
 
     }
@@ -33,6 +38,6 @@ public class GameManagerScript : MonoBehaviour
     void SpawnWorm()
     {
         Debug.Log("Worm spawned");
-        Instantiate(wormPrefab, new Vector3(0,0,0), Quaternion.identity);
+        Instantiate(wormPrefab, new Vector3(Random.Range(8,-8),Random.Range(0, 4),0), Quaternion.identity);
     }
 }

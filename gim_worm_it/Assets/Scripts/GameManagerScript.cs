@@ -9,16 +9,27 @@ public class GameManagerScript : MonoBehaviour
     public GameObject antPrefab;
     public GameObject kumbangPrefab;
 
+    private Animator WoodenStakeAnimator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        WoodenStakeAnimator = WoodenStake.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        percentageToSpawnWorm -= 0.0001f;
+        if(percentageToSpawnWorm < 0.1f)
+        {
+            WoodenStakeAnimator.SetFloat("Speed", 0);
+            percentageToSpawnWorm = 0.1f;
+        }
+        else
+        {
+            WoodenStakeAnimator.SetFloat("Speed", percentageToSpawnWorm * 5);
+        }
     }
 
     public void ButtonPressed()
@@ -26,11 +37,14 @@ public class GameManagerScript : MonoBehaviour
         if(Random.value <= percentageToSpawnWorm)
         {
             SpawnWorm();
-            percentageToSpawnWorm = 0.1f;
+            //percentageToSpawnWorm = 0.1f;
         }
         else
         {
-            percentageToSpawnWorm *= 1.1f;
+            if(percentageToSpawnWorm < 0.3f)
+            {
+                percentageToSpawnWorm *= 1.1f;
+            }
         }
 
     }

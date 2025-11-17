@@ -657,7 +657,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.4802659, y: 3.5080001}
+  m_Size: {x: 12.401328, y: 17.539999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -672,7 +672,7 @@ Transform:
   m_GameObject: {fileID: 697670634}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.37, y: 3.47, z: 0}
+  m_LocalPosition: {x: -1.85, y: 3.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5c70f248a333f47a9f3ea72591bb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerScript
-  WoodenStake: {fileID: 0}
+  WoodenStake: {fileID: 697670634}
   percentageToSpawnWorm: 0.1
   wormPrefab: {fileID: 1128864819387495398, guid: e5394cd5e9335ab4191484c7cf02b07d, type: 3}
   antPrefab: {fileID: 0}

@@ -13,20 +13,17 @@ public class InputHandler : MonoBehaviour
     {
         if(!context.started) return;
 
-        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(pos: (Vector3)Mouse.current.position.ReadValue()));
+        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
         if (!rayHit.collider) return;
 
         GameObject clickedObject = rayHit.collider.gameObject;
-        string itemName = clickedObject.name;
-        
-        if (UIManager.Instance != null)
-        {
-            UIManager.Instance.AddItem(itemName);
-        }
 
+        if (clickedObject.CompareTag("Wooden Stake"))
+            return;
+
+        UIManager.Instance.AddItem(clickedObject.name);
         Destroy(clickedObject);
 
-
-        Debug.Log(rayHit.collider.gameObject.name);
+        Debug.Log(clickedObject.name);
     }
 }

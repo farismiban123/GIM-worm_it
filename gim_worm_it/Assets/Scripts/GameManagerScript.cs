@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManagerScript : MonoBehaviour
 {
     public GameObject WoodenStake;
+    public GameObject WoodenStakeCenter;
     public float percentageToSpawnWorm = 0.1f;
 
     public GameObject wormPrefab;
@@ -18,18 +19,35 @@ public class GameManagerScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() { }
+    void Update()
+    {
+        percentageToSpawnWorm -= 0.0001f;
+        if(percentageToSpawnWorm < 0.1f)
+        {
+            WoodenStakeAnimator.SetFloat("Speed", 0);
+            percentageToSpawnWorm = 0.1f;
+        }
+        else
+        {
+            WoodenStakeAnimator.SetFloat("Speed", percentageToSpawnWorm * 5);
+        }
+    }
 
     public void ButtonPressed()
     {
         if (Random.value <= percentageToSpawnWorm)
             SpawnCreature(wormPrefab);
 
-        if (Random.value <= 0.1f) // peluang spawn semut
-            SpawnCreature(antPrefab);
+        // if (Random.value <= 0.1f) // peluang spawn semut
+        //     SpawnCreature(antPrefab);
 
-        if (Random.value <= 0.05f) // peluang spawn kumbang
-            SpawnCreature(kumbangPrefab);
+        // if (Random.value <= 0.05f) // peluang spawn kumbang
+        //     SpawnCreature(kumbangPrefab);
+
+        if(percentageToSpawnWorm < 0.3f)
+        {
+            percentageToSpawnWorm *= 1.1f;
+        }
     }
 
     // Spawn semua jenis binatang 
@@ -41,7 +59,7 @@ public class GameManagerScript : MonoBehaviour
         WormMovement wm = creature.GetComponent<WormMovement>();
         if (wm != null)
         {
-            wm.target = WoodenStake.transform;
+            wm.target = WoodenStakeCenter.transform;
             wm.startSpeed = 1f;
             wm.maxSpeed = 5f;
             wm.acceleration = 0.5f;

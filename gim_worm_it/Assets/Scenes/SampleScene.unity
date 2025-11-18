@@ -675,7 +675,8 @@ Transform:
   m_LocalPosition: {x: -1.85, y: 3.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1746024714}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782626080 stripped
@@ -931,7 +932,6 @@ RectTransform:
   m_Children:
   - {fileID: 1851962267}
   - {fileID: 1247556274}
-  - {fileID: 1328126400}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1014,7 +1014,7 @@ GameObject:
   - component: {fileID: 1746024713}
   - component: {fileID: 1746024712}
   m_Layer: 0
-  m_Name: WoodenStake
+  m_Name: WoodenStakeCenter
   m_TagString: Wooden Stake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1104,7 +1104,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1122,12 +1122,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746024711}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5919, y: -4.7635, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.82, y: -6.27, z: 0}
   m_LocalScale: {x: 5.383059, y: 16.93705, z: 5.5019}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 697670637}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1845904419
 GameObject:
@@ -1158,7 +1158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5c70f248a333f47a9f3ea72591bb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerScript
-  WoodenStake: {fileID: 1746024711}
+  WoodenStake: {fileID: 697670634}
+  WoodenStakeCenter: {fileID: 1746024711}
   percentageToSpawnWorm: 0.1
   wormPrefab: {fileID: 1128864819387495398, guid: e5394cd5e9335ab4191484c7cf02b07d, type: 3}
   antPrefab: {fileID: 0}
@@ -1473,4 +1474,4 @@ SceneRoots:
   - {fileID: 1193848380}
   - {fileID: 363273173}
   - {fileID: 1845904421}
-  - {fileID: 1746024714}
+  - {fileID: 697670637}

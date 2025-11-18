@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public int semutCount = 0;
     public int kumbangCount = 0;
 
+
     void Awake()
     {
         Instance = this;

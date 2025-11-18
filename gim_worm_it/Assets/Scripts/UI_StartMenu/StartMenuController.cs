@@ -8,7 +8,7 @@ public class StartMenuController : MonoBehaviour
     public GameObject settingMenuPanel;
     public void OnStartClick()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GameScene");
     }
 
     public void OnSettingsClick()
@@ -23,11 +23,4 @@ public class StartMenuController : MonoBehaviour
         settingMenuPanel.SetActive(false);
     }
 
-    public void OnExitClick()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
-        Application.Quit();
-    }
 }

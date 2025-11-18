@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class CountDown : MonoBehaviour
@@ -16,9 +17,12 @@ public class CountDown : MonoBehaviour
         }
         else if(RemainingTime < 0)
         {
+            GameData.Instance.fincacingCount = UIManager.Instance.cacingCount;
+            GameData.Instance.finsemutCount = UIManager.Instance.semutCount;
+            GameData.Instance.finkumbangCount = UIManager.Instance.kumbangCount;
             RemainingTime = 0;
-
             countdownText.color = Color.red;
+            SceneManager.LoadScene("GameEnd");
         }
         
         int minutes = Mathf.FloorToInt(RemainingTime/60);

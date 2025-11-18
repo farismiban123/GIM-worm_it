@@ -9,8 +9,13 @@ public class GameManagerScript : MonoBehaviour
     public GameObject antPrefab;
     public GameObject kumbangPrefab;
 
+    private Animator WoodenStakeAnimator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start() { }
+    void Start()
+    {
+        WoodenStakeAnimator = WoodenStake.GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update() { }

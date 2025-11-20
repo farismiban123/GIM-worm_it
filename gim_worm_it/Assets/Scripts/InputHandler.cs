@@ -12,14 +12,11 @@ public class InputHandler : MonoBehaviour
 
     void Update()
     {
-        // Kita pakai Input lama (GetMouseButtonDown) karena lebih aman dari warning UI
-        // Dan karena settingmu sudah "Both", ini pasti jalan.
         if (Input.GetMouseButtonDown(0))
         {
-            // Cek UI (Tidak akan warning lagi karena dipanggil di Update)
             if (EventSystem.current.IsPointerOverGameObject()) return;
 
-            // Logika Raycast (Tembak Sinar)
+            // Logika Raycast
             var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Input.mousePosition));
             if (!rayHit.collider) return;
 
@@ -33,6 +30,7 @@ public class InputHandler : MonoBehaviour
                 UIManager.Instance.AddItem(clickedObject.name);
             }
 
+            GameData.Instance.coins += 1;
             Destroy(clickedObject);
             Debug.Log(clickedObject.name);
         }

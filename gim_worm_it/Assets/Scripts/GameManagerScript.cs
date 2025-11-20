@@ -19,6 +19,9 @@ public class GameManagerScript : MonoBehaviour
         Time.timeScale = 1;
 
         WoodenStakeAnimator = WoodenStake.GetComponent<Animator>();
+
+        percentageToSpawnWorm += GameData.Instance.wormUpgradeLevel * 0.05f;
+
     }
 
     // Update is called once per frame

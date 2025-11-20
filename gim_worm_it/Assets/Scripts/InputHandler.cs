@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 public class InputHandler : MonoBehaviour
 {
     private Camera _mainCamera;
@@ -9,21 +10,31 @@ public class InputHandler : MonoBehaviour
         _mainCamera = Camera.main;
     }
 
-    public void OnClick(InputAction.CallbackContext context)
+    void Update()
     {
-        if(!context.started) return;
+        // Kita pakai Input lama (GetMouseButtonDown) karena lebih aman dari warning UI
+        // Dan karena settingmu sudah "Both", ini pasti jalan.
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Cek UI (Tidak akan warning lagi karena dipanggil di Update)
+            if (EventSystem.current.IsPointerOverGameObject()) return;
 
-        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        if (!rayHit.collider) return;
+            // Logika Raycast (Tembak Sinar)
+            var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Input.mousePosition));
+            if (!rayHit.collider) return;
 
-        GameObject clickedObject = rayHit.collider.gameObject;
+            GameObject clickedObject = rayHit.collider.gameObject;
 
-        if (clickedObject.CompareTag("Wooden Stake"))
-            return;
+            if (clickedObject.CompareTag("Wooden Stake"))
+                return;
 
+            if (UIManager.Instance != null)
+            {
+                UIManager.Instance.AddItem(clickedObject.name);
+            }
 
-        clickedObject.GetComponent<WormMovement>().click();
-
-        Debug.Log(clickedObject.name);
+            Destroy(clickedObject);
+            Debug.Log(clickedObject.name);
+        }
     }
 }

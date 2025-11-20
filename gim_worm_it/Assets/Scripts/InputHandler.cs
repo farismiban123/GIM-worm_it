@@ -21,8 +21,8 @@ public class InputHandler : MonoBehaviour
         if (clickedObject.CompareTag("Wooden Stake"))
             return;
 
-        UIManager.Instance.AddItem(clickedObject.name);
-        Destroy(clickedObject);
+
+        clickedObject.GetComponent<WormMovement>().click();
 
         Debug.Log(clickedObject.name);
     }

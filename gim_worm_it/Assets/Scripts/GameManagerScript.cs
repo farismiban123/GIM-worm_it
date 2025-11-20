@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GameManagerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Time.timeScale = 1;
+
         WoodenStakeAnimator = WoodenStake.GetComponent<Animator>();
     }
 
@@ -30,6 +33,15 @@ public class GameManagerScript : MonoBehaviour
         else
         {
             WoodenStakeAnimator.SetFloat("Speed", percentageToSpawnWorm * 5);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        { 
+            if (Time.timeScale == 0) return;
+
+            if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) return;
+
+            ButtonPressed(); 
         }
     }
 

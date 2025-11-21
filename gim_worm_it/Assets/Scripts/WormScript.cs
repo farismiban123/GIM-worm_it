@@ -3,20 +3,25 @@ using UnityEngine;
 public class WormMovement : MonoBehaviour
 {
     public Transform target;       // Stake
-    public float startSpeed = 2f;  // Kecepatan awal
+    public float startSpeed = 4f;  // Kecepatan awal
     public float maxSpeed = 5f;    // Kecepatan maksimal
     public float acceleration = 1f; // Percepatan
 
+    private Animator animator;
+    private Collider2D wormCollider;
+
     private float currentSpeed;
 
-    float waktuSpawn;
+    public float waktuSpawn = 1.519f;
     float time = 0f;
     bool hasSpawned = false;
+    bool canClick = false;
 
     void Start()
     {
         currentSpeed = startSpeed;
-        waktuSpawn = Random.Range(2f, 4f);
+        animator = GetComponent<Animator>();
+        wormCollider = GetComponent<Collider2D>();
     }
 
     void Update()
@@ -57,20 +62,31 @@ public class WormMovement : MonoBehaviour
 
         if (time > waktuSpawn + 5f && hasSpawned == true)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
+    }
+
+    public void CacingMasuk()
+    {
+        Destroy(gameObject);
+    }
+
+    public void CacingKeluar()
+    {
+        canClick = true;
+        wormCollider.enabled = true;
     }
 
     void digUp()
     {
-        Debug.Log("Dig Up");
+        animator.SetTrigger("Keluar");
     }
     
     public void click()
     {
-        if(hasSpawned == true)
+        if(canClick == true)
         {
-           UIManager.Instance.AddItem(gameObject.name);
+            UIManager.Instance.AddItem(gameObject.name);
             Destroy(gameObject); 
         }
     }

@@ -1,17 +1,27 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class GameManagerScript : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     public GameObject WoodenStake;
     public GameObject WoodenStakeCenter;
     public float percentageToSpawnWorm = 0.1f;
 
     public GameObject wormPrefab;
+    public GameObject tanahPrefab;
     public GameObject antPrefab;
     public GameObject kumbangPrefab;
 
     private Animator WoodenStakeAnimator;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,7 +51,8 @@ public class GameManagerScript : MonoBehaviour
 
             if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) return;
 
-            ButtonPressed(); 
+            //Debug.Log("Press");
+            //ButtonPressed(); 
         }
     }
 
@@ -67,15 +78,43 @@ public class GameManagerScript : MonoBehaviour
     {
         Vector3 spawnPos = GetSpawnFromScreenEdge();
         GameObject creature = Instantiate(prefab, spawnPos, Quaternion.identity);
+        GameObject newTanah = Instantiate(tanahPrefab, spawnPos, Quaternion.identity);
 
         WormMovement wm = creature.GetComponent<WormMovement>();
         if (wm != null)
         {
             wm.target = WoodenStakeCenter.transform;
-            wm.startSpeed = 1f;
+            wm.startSpeed = 2.5f;
             wm.maxSpeed = 5f;
             wm.acceleration = 0.5f;
         }
+
+        //buat tanah
+        Vector3 directionToTarget = WoodenStakeCenter.transform.position - newTanah.transform.position;
+        float angle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
+        newTanah.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
+    }
+
+    //spawn tanah
+    public void SpawnTanah()
+    {
+        
+        // 1. Get the spawn position from the screen edge (same as cacing/worm)
+        Vector3 spawnPos = GetSpawnFromScreenEdge();
+        
+        // 2. Instantiate Tanah
+        GameObject newTanah = Instantiate(tanahPrefab, spawnPos, Quaternion.identity);
+
+        // 3. Set rotation to face the WoodenStakeCenter
+        
+        // Calculate the direction vector
+        Vector3 directionToTarget = WoodenStakeCenter.transform.position - newTanah.transform.position;
+        
+        // Calculate the angle using Mathf.Atan2
+        float angle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
+        
+        // Apply the rotation with the -90 degree adjustment
+        newTanah.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
     }
 
     // Spawn dari ujung layar: kiri, kanan, atau atas
@@ -83,19 +122,21 @@ public class GameManagerScript : MonoBehaviour
     {
         Vector3 spawnPos = Vector3.zero;
         float zDistance = 0f; 
+        float offset = Random.Range(0.05f, 0.1f);
+        //Debug.Log(offset);
 
         int edge = Random.Range(0, 3); 
 
         switch (edge)
         {
             case 0: // kiri
-                spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(0, Random.Range(0.3f, 1f), zDistance));
+                spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(offset, Random.Range(0.3f, 1f - offset), zDistance));
                 break;
             case 1: // kanan
-                spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(1, Random.Range(0.3f, 1f), zDistance));
+                spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(1f- offset, Random.Range(0.3f, 1f) - offset, zDistance));
                 break;
             case 2: // atas
-                spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(Random.Range(0f, 1f), 1, zDistance));
+                spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(Random.Range(offset, 1f - offset), 1f - offset, zDistance));
                 break;
         }
 

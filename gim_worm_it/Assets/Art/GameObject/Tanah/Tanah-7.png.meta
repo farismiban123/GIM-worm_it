@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: c80c63d4d297838479e50e8a4c5b7fd0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4525814533629050831
+    second: Tanah-7_0
+  - first:
+      213: -4069545192958755416
+    second: Tanah-7_1
+  - first:
+      213: -3738509412794920446
+    second: Tanah-7_2
+  - first:
+      213: 7343825690918451566
+    second: Tanah-7_3
+  - first:
+      213: 440916317519873796
+    second: Tanah-7_4
+  - first:
+      213: 154205935641780928
+    second: Tanah-7_5
+  - first:
+      213: 6954167114040685864
+    second: Tanah-7_6
+  - first:
+      213: -4958600917906003690
+    second: Tanah-7_7
+  - first:
+      213: 8940945884791160031
+    second: Tanah-7_8
+  - first:
+      213: 6407534123792147196
+    second: Tanah-7_9
+  - first:
+      213: -7447441054843290894
+    second: Tanah-7_10
+  - first:
+      213: -8520596165899575786
+    second: Tanah-7_11
+  - first:
+      213: 8743292763602302593
+    second: Tanah-7_12
+  - first:
+      213: -8889870281966065426
+    second: Tanah-7_13
+  - first:
+      213: -1565270119207054112
+    second: Tanah-7_14
+  - first:
+      213: -4409745279430199745
+    second: Tanah-7_15
+  - first:
+      213: 1073932335535031525
+    second: Tanah-7_16
+  - first:
+      213: -2406505928739635052
+    second: Tanah-7_17
+  - first:
+      213: -2018030225909415962
+    second: Tanah-7_18
+  - first:
+      213: 7952287478966026132
+    second: Tanah-7_19
+  - first:
+      213: -6055846477958549809
+    second: Tanah-7_20
+  - first:
+      213: 4723518994935202806
+    second: Tanah-7_21
+  - first:
+      213: -3845451713602172047
+    second: Tanah-7_22
+  - first:
+      213: 144859731951338969
+    second: Tanah-7_23
+  - first:
+      213: -8899744024770364812
+    second: Tanah-7_24
+  - first:
+      213: -2434446443622527400
+    second: Tanah-7_25
+  - first:
+      213: 753002603517548654
+    second: Tanah-7_26
+  - first:
+      213: 6640472962401310356
+    second: Tanah-7_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.05578283}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tanah-7_0
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 1598
+        width: 246
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf724ce65ceece30800000000000000
+      internalID: 4525814533629050831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_1
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 1701
+        width: 134
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad7b4855321687c0800000000000000
+      internalID: -4069545192958755416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_2
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 1697
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20297ec1f752e1cc0800000000000000
+      internalID: -3738509412794920446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_3
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 1674
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e69f49f7e828ae560800000000000000
+      internalID: 7343825690918451566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_4
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 1678
+        width: 59
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40702710e037e1600800000000000000
+      internalID: 440916317519873796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_5
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 1615
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c26f204b79d32200800000000000000
+      internalID: 154205935641780928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_6
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1628
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 825391d352a228060800000000000000
+      internalID: 6954167114040685864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_7
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 1601
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6196949acb28f2bb0800000000000000
+      internalID: -4958600917906003690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_8
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1556
+        width: 150
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdcb7fa39ee941c70800000000000000
+      internalID: 8940945884791160031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_9
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 1590
+        width: 116
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf223d646522ce850800000000000000
+      internalID: 6407534123792147196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_10
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 1459
+        width: 110
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fab760a1df55a890800000000000000
+      internalID: -7447441054843290894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_11
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 1631
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61e10016ee2c0c980800000000000000
+      internalID: -8520596165899575786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_12
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 1605
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18632cdc17a665970800000000000000
+      internalID: 8743292763602302593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_13
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 1601
+        width: 25
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee86c104416d0a480800000000000000
+      internalID: -8889870281966065426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_14
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 1609
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e45127ae1b074ae0800000000000000
+      internalID: -1565270119207054112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_15
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1597
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f367b9d38007dc2c0800000000000000
+      internalID: -4409745279430199745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_16
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1595
+        width: 27
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e40f5ce4cf57ee00800000000000000
+      internalID: 1073932335535031525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_17
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 1589
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4904a97ab9f5a9ed0800000000000000
+      internalID: -2406505928739635052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_18
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 1581
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6effaa693348ef3e0800000000000000
+      internalID: -2018030225909415962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_19
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1580
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f7e8f34533c5e60800000000000000
+      internalID: 7952287478966026132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_20
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 1572
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fceeafaa6bf45fba0800000000000000
+      internalID: -6055846477958549809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_21
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 1573
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f34ce6ef7f4d8140800000000000000
+      internalID: 4723518994935202806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_22
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 1564
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17b43d16a0632aac0800000000000000
+      internalID: -3845451713602172047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_23
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1557
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d5c731a825a20200800000000000000
+      internalID: 144859731951338969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_24
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 59
+        width: 1176
+        height: 1498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47a38ab56f1cd7480800000000000000
+      internalID: -8899744024770364812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_25
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 1551
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e8a279bdb173ed0800000000000000
+      internalID: -2434446443622527400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_26
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 1548
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e689b99d0e3337a00800000000000000
+      internalID: 753002603517548654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tanah-7_27
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 415
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49614800af2b72c50800000000000000
+      internalID: 6640472962401310356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Tanah-7_0: 4525814533629050831
+      Tanah-7_1: -4069545192958755416
+      Tanah-7_10: -7447441054843290894
+      Tanah-7_11: -8520596165899575786
+      Tanah-7_12: 8743292763602302593
+      Tanah-7_13: -8889870281966065426
+      Tanah-7_14: -1565270119207054112
+      Tanah-7_15: -4409745279430199745
+      Tanah-7_16: 1073932335535031525
+      Tanah-7_17: -2406505928739635052
+      Tanah-7_18: -2018030225909415962
+      Tanah-7_19: 7952287478966026132
+      Tanah-7_2: -3738509412794920446
+      Tanah-7_20: -6055846477958549809
+      Tanah-7_21: 4723518994935202806
+      Tanah-7_22: -3845451713602172047
+      Tanah-7_23: 144859731951338969
+      Tanah-7_24: -8899744024770364812
+      Tanah-7_25: -2434446443622527400
+      Tanah-7_26: 753002603517548654
+      Tanah-7_27: 6640472962401310356
+      Tanah-7_3: 7343825690918451566
+      Tanah-7_4: 440916317519873796
+      Tanah-7_5: 154205935641780928
+      Tanah-7_6: 6954167114040685864
+      Tanah-7_7: -4958600917906003690
+      Tanah-7_8: 8940945884791160031
+      Tanah-7_9: 6407534123792147196
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

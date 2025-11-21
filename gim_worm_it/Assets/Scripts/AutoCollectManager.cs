@@ -98,9 +98,12 @@ public class AutoCollectManager : MonoBehaviour
         float duration = 0.6f;
         float t = 0;
 
-        // Bikin animasi sedikit melengkung 
+        // Simpan scale awal cacing
+        Vector3 startScale = cacing.transform.localScale;
+
+        // Bikin animasi sedikit melengkung + random offset kecil
         Vector3 mid = (start + end) * 0.5f;
-        mid.y += 1f; // naik sedikit biar mantep
+        mid.y += 1f;
 
         while (t < 1f)
         {
@@ -111,17 +114,22 @@ public class AutoCollectManager : MonoBehaviour
             // Smoothstep
             float s = t * t * (3 - 2 * t);
 
-            // Interpolasi ke titik tengah dulu biar melengkung
             Vector3 a = Vector3.Lerp(start, mid, s);
             Vector3 b = Vector3.Lerp(mid, end, s);
-
             cacing.transform.position = Vector3.Lerp(a, b, s);
+
+            //scale menegcil makin ke kantong
+            float shrink = Mathf.Lerp(1f, 0f, s);
+
+            // terapkan ke scale cacing
+            cacing.transform.localScale = startScale * shrink;
 
             yield return null;
         }
 
         Destroy(cacing);
     }
+
 
 
 }

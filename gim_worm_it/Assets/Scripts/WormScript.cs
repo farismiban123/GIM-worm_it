@@ -18,7 +18,7 @@ public class WormMovement : MonoBehaviour
 
     //------------autocollect allowed
     public bool autoCollectAllowed = false;  
-    public float autoCollectDelay = 1.5f;     
+    public float autoCollectDelay = 0.2f;     
 
     bool disableDestroy = false; 
 

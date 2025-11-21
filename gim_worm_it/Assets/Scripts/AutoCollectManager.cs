@@ -59,10 +59,10 @@ public class AutoCollectManager : MonoBehaviour
             yield return StartCoroutine(AnimateToBag(cacing));
 
             // tambah ke UI
-            UIManager.Instance.AddItem("Cacing(Clone)");
+            UIManager.Instance.AddItem("Cacing");
 
             // tambah coin
-            GameData.Instance.coins++;
+            GameData.Instance.coins += 5;
 
             yield return new WaitForSeconds(0.1f); // jarak antar collect
         }

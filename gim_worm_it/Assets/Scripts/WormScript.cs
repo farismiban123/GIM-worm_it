@@ -7,7 +7,10 @@ public class WormMovement : MonoBehaviour
     public float maxSpeed = 5f;    // Kecepatan maksimal
     public float acceleration = 1f; // Percepatan
 
-    private Animator animator;
+    public GameObject BagianCacing;
+    public GameObject BagianTanah;
+    private Animator wormAnimator;
+    private Animator tanahAnimator;
     private Collider2D wormCollider;
 
     private float currentSpeed;
@@ -20,7 +23,8 @@ public class WormMovement : MonoBehaviour
     void Start()
     {
         currentSpeed = startSpeed;
-        animator = GetComponent<Animator>();
+        wormAnimator = BagianCacing.GetComponent<Animator>();
+        tanahAnimator = BagianTanah.GetComponent<Animator>();
         wormCollider = GetComponent<Collider2D>();
     }
 
@@ -79,14 +83,15 @@ public class WormMovement : MonoBehaviour
 
     void digUp()
     {
-        animator.SetTrigger("Keluar");
+        wormAnimator.SetTrigger("Keluar");
+        tanahAnimator.SetTrigger("Keluar");
     }
     
     public void click()
     {
         if(canClick == true)
         {
-            UIManager.Instance.AddItem(gameObject.name);
+            UIManager.Instance.AddItem("Cacing");
             Destroy(gameObject); 
         }
     }

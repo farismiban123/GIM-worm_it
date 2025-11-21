@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
 
     public void AddItem(string itemName)
     {
-        if (itemName == "Cacing(Clone)")
+        if (itemName == "Cacing")
         {
             cacingCount++;
         }

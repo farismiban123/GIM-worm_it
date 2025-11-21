@@ -28,7 +28,7 @@ public class InputHandler : MonoBehaviour
             if (clickedObject.CompareTag("Wooden Stake"))
                 return;
 
-            if (clickedObject.name == "Cacing(Clone)")
+            if (clickedObject.CompareTag("Cacing"))
             {
                 Debug.Log("Cacing");
                 if (UIManager.Instance != null)

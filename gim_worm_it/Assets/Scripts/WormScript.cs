@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class WormMovement : MonoBehaviour
 {
@@ -11,12 +13,28 @@ public class WormMovement : MonoBehaviour
 
     float waktuSpawn;
     float time = 0f;
-    bool hasSpawned = false;
+    [HideInInspector] public bool hasSpawned = false;
 
+
+    //------------autocollect allowed
+    public bool autoCollectAllowed = false;  
+    public float autoCollectDelay = 0.2f;     
+
+    bool disableDestroy = false; 
+
+    //---------------------------------
     void Start()
     {
         currentSpeed = startSpeed;
         waktuSpawn = Random.Range(2f, 4f);
+
+        StartCoroutine(AutoCollectDelayRoutine());
+    }
+
+    IEnumerator AutoCollectDelayRoutine()
+    {
+        yield return new WaitForSeconds(autoCollectDelay);
+        autoCollectAllowed = true; // auto colect baru boleh
     }
 
     void Update()
@@ -57,6 +75,7 @@ public class WormMovement : MonoBehaviour
 
         if (time > waktuSpawn + 5f && hasSpawned == true)
         {
+            if (!disableDestroy)   // hanya destroy jika bukan hasil auto-collect
             Destroy(gameObject);
         }
     }
@@ -74,4 +93,12 @@ public class WormMovement : MonoBehaviour
             Destroy(gameObject); 
         }
     }
+    //disable destroy buat kalo kita punya kantong ga tabrakan
+
+
+    public void DisableAutoDestroy()
+    {
+        disableDestroy = true;
+    }
+
 }

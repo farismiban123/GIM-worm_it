@@ -19,16 +19,19 @@ public class GameManagerScript : MonoBehaviour
         Time.timeScale = 1;
 
         WoodenStakeAnimator = WoodenStake.GetComponent<Animator>();
+
+        percentageToSpawnWorm += GameData.Instance.wormUpgradeLevel * 0.05f;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        percentageToSpawnWorm -= 0.0001f;
+        percentageToSpawnWorm -= 0.00001f;
         if(percentageToSpawnWorm < 0.1f)
         {
             WoodenStakeAnimator.SetFloat("Speed", 0);
-            percentageToSpawnWorm = 0.1f;
+            percentageToSpawnWorm = Mathf.Max(0f, percentageToSpawnWorm);
         }
         else
         {

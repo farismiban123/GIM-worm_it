@@ -454,10 +454,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cacing
       objectReference: {fileID: 0}
-    - target: {fileID: 5513570623140753648, guid: e5394cd5e9335ab4191484c7cf02b07d, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7297826729021785913, guid: e5394cd5e9335ab4191484c7cf02b07d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.55

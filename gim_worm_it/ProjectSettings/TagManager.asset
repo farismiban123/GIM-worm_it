@@ -7,6 +7,9 @@ TagManager:
   - Wooden Stake
   - Cacing
   - Background
+  - Audio
+  - Tanah
+  - Menu
   layers:
   - Default
   - TransparentFX

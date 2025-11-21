@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8461689804256356477}
   - component: {fileID: 2155791291636154096}
   - component: {fileID: 1845645917446939424}
-  - component: {fileID: 6812610920353930310}
+  - component: {fileID: 7201824432237297296}
   m_Layer: 0
   m_Name: BagianCacing
   m_TagString: Untagged
@@ -114,7 +114,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6812610920353930310
+--- !u!114 &7201824432237297296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,6 +294,9 @@ MonoBehaviour:
   BagianCacing: {fileID: 2229466426244271012}
   BagianTanah: {fileID: 4582662258842262073}
   waktuSpawn: 1.518
+  hasSpawned: 0
+  autoCollectAllowed: 0
+  autoCollectDelay: 1.519
 --- !u!61 &5435127133258117361
 BoxCollider2D:
   m_ObjectHideFlags: 0

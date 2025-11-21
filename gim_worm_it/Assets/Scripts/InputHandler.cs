@@ -25,14 +25,27 @@ public class InputHandler : MonoBehaviour
             if (clickedObject.CompareTag("Wooden Stake"))
                 return;
 
-            if (UIManager.Instance != null)
+            if (clickedObject.CompareTag("Cacing"))
             {
-                UIManager.Instance.AddItem(clickedObject.name);
+                Debug.Log("Cacing");
+                if (UIManager.Instance != null)
+                {
+                    // Panggil fungsi klik di cacing
+                    var wormScript = clickedObject.GetComponent<WormMovement>();
+                    if (wormScript != null) wormScript.click();
+                }
+                return;
             }
 
-            GameData.Instance.coins += 1;
-            Destroy(clickedObject);
-            Debug.Log(clickedObject.name);
+            if (clickedObject.CompareTag("Background")) 
+            {
+                GameManagerScript.Instance.ButtonPressed();
+
+            }
+
+            // GameData.Instance.coins += 1;
+            // Destroy(clickedObject);
+            // Debug.Log(clickedObject.name);
         }
     }
 }

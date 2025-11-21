@@ -11,14 +11,22 @@ public class WormMovement : MonoBehaviour
 
     private float currentSpeed;
 
-    float waktuSpawn;
+    public GameObject BagianCacing;
+    public GameObject BagianTanah;
+    private Animator wormAnimator;
+    private Animator tanahAnimator;
+    private Collider2D wormCollider;
+    
+
+    public float waktuSpawn = 1.519f;
     float time = 0f;
     [HideInInspector] public bool hasSpawned = false;
+    bool canClick = false;
 
 
     //------------autocollect allowed
     public bool autoCollectAllowed = false;  
-    public float autoCollectDelay = 0.2f;     
+    public float autoCollectDelay; 
 
     bool disableDestroy = false; 
 
@@ -26,7 +34,11 @@ public class WormMovement : MonoBehaviour
     void Start()
     {
         currentSpeed = startSpeed;
-        waktuSpawn = Random.Range(2f, 4f);
+        wormAnimator = BagianCacing.GetComponent<Animator>();
+        tanahAnimator = BagianTanah.GetComponent<Animator>();
+        wormCollider = GetComponent<Collider2D>();
+
+        autoCollectDelay = waktuSpawn;
 
         StartCoroutine(AutoCollectDelayRoutine());
     }
@@ -80,17 +92,31 @@ public class WormMovement : MonoBehaviour
         }
     }
 
+    public void CacingMasuk()
+    {
+        Destroy(gameObject);
+    }
+
+    public void CacingKeluar()
+    {
+        canClick = true;
+        wormCollider.enabled = true;
+    }
+
+
     void digUp()
     {
-        Debug.Log("Dig Up");
+        wormAnimator.SetTrigger("Keluar");
+        tanahAnimator.SetTrigger("Keluar");
     }
     
     public void click()
     {
-        if(hasSpawned == true)
+        if(canClick == true)
         {
-           UIManager.Instance.AddItem(gameObject.name);
+            UIManager.Instance.AddItem("Cacing");
             Destroy(gameObject); 
+            GameData.Instance.coins += 5;
         }
     }
     //disable destroy buat kalo kita punya kantong ga tabrakan

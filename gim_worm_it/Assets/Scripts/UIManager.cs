@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
     // DIPANGGIL setiap kali cacing/semut/kumbang tertangkap
     public void AddItem(string itemName)
     {
-        if (itemName == "Cacing(Clone)")
+        if (itemName == "Cacing")
         {
             cacingCount++;
 

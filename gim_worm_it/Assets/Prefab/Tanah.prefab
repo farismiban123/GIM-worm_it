@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3438488540593815293}
   - component: {fileID: 4556106564279811428}
   - component: {fileID: 8837813132531342855}
-  - component: {fileID: 7014661800516406297}
+  - component: {fileID: 6156811631330828464}
   m_Layer: 0
   m_Name: Tanah
   m_TagString: Untagged
@@ -114,7 +114,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7014661800516406297
+--- !u!114 &6156811631330828464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,6 +123,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 866160356956300850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd3c9d3f642712d4cbc260e1c8527016, type: 3}
+  m_Script: {fileID: 11500000, guid: 40981168523febd428aad97be9b23345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] GameObject pauseMenuPanel;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject clickArea;
 
@@ -37,10 +38,9 @@ public class SceneLoader : MonoBehaviour
 
     public void Pause()
     {
-        pauseMenu.SetActive(true);
+        //if (clickArea != null) clickArea.SetActive(false); gak butuh, input ada di input handler
 
-        if (clickArea != null) clickArea.SetActive(false);
-
+        pauseMenuPanel.SetActive(true);
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
     }
@@ -48,8 +48,9 @@ public class SceneLoader : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        pauseMenuPanel.SetActive(false);
 
-        if (clickArea != null) clickArea.SetActive(true);
+        //if (clickArea != null) clickArea.SetActive(true); gak butuh, input ada di input handler
 
         Time.timeScale = 1;
     }

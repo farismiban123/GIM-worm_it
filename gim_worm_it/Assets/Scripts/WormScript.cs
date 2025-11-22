@@ -1,9 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
-
 public class WormMovement : MonoBehaviour
 {
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     public Transform target;       // Stake
     public float startSpeed = 2f;  // Kecepatan awal
     public float maxSpeed = 5f;    // Kecepatan maksimal
@@ -114,6 +119,7 @@ public class WormMovement : MonoBehaviour
     {
         if(canClick == true)
         {
+            audioManager.PlaySFX(audioManager.tapCacing);
             UIManager.Instance.AddItem("Cacing");
             Destroy(gameObject); 
             GameData.Instance.coins += 5;

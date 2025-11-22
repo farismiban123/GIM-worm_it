@@ -3536,9 +3536,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerScript
   WoodenStake: {fileID: 384361930}
   WoodenStakeCenter: {fileID: 769950090}
-  percentageToSpawnWorm: 0.1
+  baseMaxChanceToSpawnCreature: 0.2
+  percentageToSpawnCreature: 0.1
+  maxPercentageToSpawnCreature: 0.3
+  changeToSpawnWorm: 0.8
   wormPrefab: {fileID: 4606933717171232334, guid: 93a6f995a87c63949a00657147133fa1, type: 3}
-  isopodPrefab: {fileID: 0}
+  isopodPrefab: {fileID: 8460094569676044212, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
   tanahPrefab: {fileID: 866160356956300850, guid: 69811da7b983eeb4aa747c0b34014cf3, type: 3}
 --- !u!4 &1845904421
 Transform:

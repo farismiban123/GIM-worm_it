@@ -37,6 +37,18 @@ public class InputHandler : MonoBehaviour
                 return;
             }
 
+            if (clickedObject.CompareTag("Isopod"))
+            {
+                Debug.Log("Isopod");
+                if (UIManager.Instance != null)
+                {
+                    // Panggil fungsi klik di isopod
+                    var isopodScript = clickedObject.GetComponent<Isopod>();
+                    if (isopodScript != null) isopodScript.click();
+                }
+                return;
+            }
+
             if (clickedObject.CompareTag("Background")) 
             {
                 GameManagerScript.Instance.ButtonPressed();

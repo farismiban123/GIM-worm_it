@@ -6,11 +6,14 @@ public class GameManagerScript : MonoBehaviour
     public static GameManagerScript Instance;
     public GameObject WoodenStake;
     public GameObject WoodenStakeCenter;
-    public float percentageToSpawnWorm = 0.1f;
+    public float baseMaxChanceToSpawnCreature = 0.2f;
+    public float percentageToSpawnCreature = 0.1f;
+    public float maxPercentageToSpawnCreature = 0.3f;
+    public float changeToSpawnWorm = 0.9f;
+
 
     public GameObject wormPrefab;
-    public GameObject antPrefab;
-    public GameObject kumbangPrefab;
+    public GameObject isopodPrefab;
     public GameObject tanahPrefab;
 
     private Animator WoodenStakeAnimator;
@@ -22,7 +25,9 @@ public class GameManagerScript : MonoBehaviour
 
         WoodenStakeAnimator = WoodenStake.GetComponent<Animator>();
 
-        percentageToSpawnWorm += GameData.Instance.wormUpgradeLevel * 0.05f;
+        //percentageToSpawnCreature += GameData.Instance.wormUpgradeLevel * 0.05f;
+
+        maxPercentageToSpawnCreature = baseMaxChanceToSpawnCreature + GameData.Instance.wormUpgradeLevel * 0.05f;
 
     }
 
@@ -38,15 +43,16 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        percentageToSpawnWorm -= 0.00001f;
-        if(percentageToSpawnWorm < 0.1f)
+        percentageToSpawnCreature -= 0.00001f;
+        if(percentageToSpawnCreature < 0.1f)
         {
             WoodenStakeAnimator.SetFloat("Speed", 0);
-            percentageToSpawnWorm = Mathf.Max(0f, percentageToSpawnWorm);
+            percentageToSpawnCreature = 0.1f;
+            //percentageToSpawnCreature = Mathf.Max(0f, percentageToSpawnCreature);
         }
         else
         {
-            WoodenStakeAnimator.SetFloat("Speed", percentageToSpawnWorm * 5);
+            WoodenStakeAnimator.SetFloat("Speed", percentageToSpawnCreature * 5);
         }
 
         // if (Input.GetMouseButtonDown(0))
@@ -61,18 +67,18 @@ public class GameManagerScript : MonoBehaviour
 
     public void ButtonPressed()
     {
-        if (Random.value <= percentageToSpawnWorm)
-            SpawnCreature(wormPrefab);
-
-        // if (Random.value <= 0.1f) // peluang spawn semut
-        //     SpawnCreature(antPrefab);
-
-        // if (Random.value <= 0.05f) // peluang spawn kumbang
-        //     SpawnCreature(kumbangPrefab);
-
-        if(percentageToSpawnWorm < 0.3f)
+        if (Random.value < percentageToSpawnCreature)
         {
-            percentageToSpawnWorm *= 1.1f;
+            if (Random.value < changeToSpawnWorm)
+            {
+                SpawnCreature(wormPrefab);
+            }
+            else SpawnCreature(isopodPrefab);
+        }
+
+        if(percentageToSpawnCreature < maxPercentageToSpawnCreature)
+        {
+            percentageToSpawnCreature *= 1.05f;
         }
     }
 
@@ -83,13 +89,21 @@ public class GameManagerScript : MonoBehaviour
         GameObject creature = Instantiate(prefab, spawnPos, Quaternion.identity);
         GameObject newTanah = Instantiate(tanahPrefab, spawnPos, Quaternion.identity);
 
-        WormMovement wm = creature.GetComponent<WormMovement>();
-        if (wm != null)
+        if(prefab == isopodPrefab)
         {
-            wm.target = WoodenStakeCenter.transform;
-            wm.startSpeed = 2.5f;
-            wm.maxSpeed = 5f;
-            wm.acceleration = 0.5f;
+            Isopod isopodMovementScript = creature.GetComponent<Isopod>();
+            isopodMovementScript.target = WoodenStakeCenter.transform;
+            isopodMovementScript.startSpeed = 2.5f;
+            isopodMovementScript.maxSpeed = 5f;
+            isopodMovementScript.acceleration = 0.5f;
+        }
+        else if(prefab == wormPrefab)
+        {
+            WormMovement wormMovementScript = creature.GetComponent<WormMovement>();
+            wormMovementScript.target = WoodenStakeCenter.transform;
+            wormMovementScript.startSpeed = 2.5f;
+            wormMovementScript.maxSpeed = 5f;
+            wormMovementScript.acceleration = 0.5f;
         }
 
         //buat tanah

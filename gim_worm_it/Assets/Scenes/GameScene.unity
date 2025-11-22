@@ -3536,10 +3536,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerScript
   WoodenStake: {fileID: 384361930}
   WoodenStakeCenter: {fileID: 769950090}
-  percentageToSpawnWorm: 0.1
+  baseMaxChanceToSpawnCreature: 0.2
+  percentageToSpawnCreature: 0.1
+  maxPercentageToSpawnCreature: 0.3
+  changeToSpawnWorm: 0.8
   wormPrefab: {fileID: 4606933717171232334, guid: 93a6f995a87c63949a00657147133fa1, type: 3}
-  antPrefab: {fileID: 0}
-  kumbangPrefab: {fileID: 0}
+  isopodPrefab: {fileID: 8460094569676044212, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
   tanahPrefab: {fileID: 866160356956300850, guid: 69811da7b983eeb4aa747c0b34014cf3, type: 3}
 --- !u!4 &1845904421
 Transform:
@@ -4600,6 +4602,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69811da7b983eeb4aa747c0b34014cf3, type: 3}
+--- !u!1001 &6331880175302149990
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3092258458085546147, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.05798
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092258458085546147, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.64467
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092258458085546147, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092258458085546147, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092258458085546147, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092258458085546147, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092258458085546147, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092258458085546147, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092258458085546147, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092258458085546147, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460094569676044212, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
+      propertyPath: m_Name
+      value: Isopod
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 618a55a441610394ba7b6d98ec22cc4a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4620,3 +4679,4 @@ SceneRoots:
   - {fileID: 5387028739363441494}
   - {fileID: 2064145669}
   - {fileID: 1962545624}
+  - {fileID: 6331880175302149990}

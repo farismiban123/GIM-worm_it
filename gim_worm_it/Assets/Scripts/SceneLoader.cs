@@ -5,34 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject clickArea;
+
+    public Animator transitionAnimator;
+    public float transitionTime = 1f;
+
     public void QuitGame()
     {
         Application.Quit();
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 
     public void RestartGame()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("StartMenu");
+        StartCoroutine(LoadLevel("StartMenu"));
     }
 
     public void ShopMenu()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("ShopMenu");
+        StartCoroutine(LoadLevel("ShopMenu"));
     }
 
     public void Back()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("GameEnd");
+        StartCoroutine(LoadLevel("GameEnd"));
     }
 
-    //pause menu
 
     public void Pause()
     {
@@ -55,12 +56,25 @@ public class SceneLoader : MonoBehaviour
 
     public void Restart()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        StartCoroutine(LoadLevel(currentSceneName));
     }
 
     public void RetryGame()
     {
-        SceneManager.LoadScene("GameScene");
+        StartCoroutine(LoadLevel("GameScene"));
+    }
+
+    
+    IEnumerator LoadLevel(string sceneName)
+    {
+        if (transitionAnimator != null)
+        {
+            transitionAnimator.SetTrigger("Start");
+        }
+        yield return new WaitForSecondsRealtime(transitionTime);
+
+        Time.timeScale = 1;
+        SceneManager.LoadScene(sceneName);
     }
 }

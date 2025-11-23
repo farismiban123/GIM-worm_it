@@ -3315,6 +3315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e5fe7b72ca2d54eadb8cd4b53e45ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonReset
+  normalStateName: Normal
 --- !u!1 &1487427457
 GameObject:
   m_ObjectHideFlags: 0

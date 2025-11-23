@@ -6,8 +6,8 @@ public class FInalScore : MonoBehaviour
     public TextMeshProUGUI scoreText;
     void UpdateScoreText()
     {
-        scoreText.text = "Cacing: " + GameData.Instance.fincacingCount + "\n" +
-                         "Semut: " + GameData.Instance.finisopodCount;
+        scoreText.text = ": " + GameData.Instance.fincacingCount + "\n" +
+                         ": " + GameData.Instance.finisopodCount;
     }
     void Start()
     {

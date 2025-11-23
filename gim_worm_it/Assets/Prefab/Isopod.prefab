@@ -180,7 +180,7 @@ MonoBehaviour:
   acceleration: 1
   BagianIsopod: {fileID: 6459163336898625339}
   BagianTanah: {fileID: 8477606373292585261}
-  waktuSpawn: 1.519
+  waktuSpawn: 1.25
   hasSpawned: 0
   autoCollectAllowed: 0
   autoCollectDelay: 0

@@ -7,8 +7,7 @@ public class FInalScore : MonoBehaviour
     void UpdateScoreText()
     {
         scoreText.text = "Cacing: " + GameData.Instance.fincacingCount + "\n" +
-                         "Semut: " + GameData.Instance.finsemutCount + "\n" +
-                         "Kumbang: " + GameData.Instance.finkumbangCount;
+                         "Semut: " + GameData.Instance.finisopodCount;
     }
     void Start()
     {

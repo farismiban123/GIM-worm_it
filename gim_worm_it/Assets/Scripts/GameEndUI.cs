@@ -9,14 +9,12 @@ public class GameEndUI : MonoBehaviour
     {
         // Ambil hasil akhir dari UIManager
         int cacing = UIManager.Instance.cacingCount;
-        int semut = UIManager.Instance.semutCount;
-        int kumbang = UIManager.Instance.kumbangCount;
+        int isopod = UIManager.Instance.isopodCount;
 
         // Tampilkan ke UI
         resultText.text =
-            "Cacing: " + cacing + "\n" +
-            "Semut: " + semut + "\n" +
-            "Kumbang: " + kumbang;
+            ": " + cacing + "\n" +
+            ": " + isopod;
     }
 
     public void NextLevel()

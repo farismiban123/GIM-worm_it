@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] GameObject pauseMenuPanel;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject clickArea;
 
     public Animator transitionAnimator;
     public float transitionTime = 1f;
+
+    public static string lastSceneBeforeShop = "";
 
     public void QuitGame()
     {
@@ -26,21 +30,27 @@ public class SceneLoader : MonoBehaviour
 
     public void ShopMenu()
     {
+        //simpan scene before shop
+         SceneLoader.lastSceneBeforeShop = SceneManager.GetActiveScene().name;
+
         StartCoroutine(LoadLevel("ShopMenu"));
     }
 
     public void Back()
     {
-        StartCoroutine(LoadLevel("GameEnd"));
+         string target = SceneLoader.lastSceneBeforeShop;
+
+        if (string.IsNullOrEmpty(target))
+            target = "StartMenu"; // fallback kalau kosong
+
+        StartCoroutine(LoadLevel(target));
     }
 
 
     public void Pause()
     {
-        pauseMenu.SetActive(true);
 
-        if (clickArea != null) clickArea.SetActive(false);
-
+        pauseMenuPanel.SetActive(true);
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
     }
@@ -48,8 +58,7 @@ public class SceneLoader : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
-
-        if (clickArea != null) clickArea.SetActive(true);
+        pauseMenuPanel.SetActive(false);
 
         Time.timeScale = 1;
     }

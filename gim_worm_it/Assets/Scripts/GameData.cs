@@ -5,8 +5,7 @@ public class GameData : MonoBehaviour
 	//---------------------------------Makhluk
 	public static GameData Instance;
     public int fincacingCount = 0;
-    public int finsemutCount = 0;
-    public int finkumbangCount = 0;
+    public int finisopodCount = 0;
 
 	//--------------------------------- KOIN
 	public int coins = 0;                  // Koin pemain
@@ -21,7 +20,7 @@ public class GameData : MonoBehaviour
 	//---------------------------------Level dan kuota
 
 	public int currentLevel = 1;    // mulai dari level 1
-	public int quotaPerLevel = 30;  // quota awal
+	public int quotaPerLevel = 15;  // quota awal
 	public float levelTime = 30f; 
 	public int coinsBeforeLevel = 0;
 
@@ -43,7 +42,7 @@ public class GameData : MonoBehaviour
 
 	public void UpdateQuota()
     {
-        // Level 1 = 30, naik 5 tiap level
-        quotaPerLevel = 30 + ((currentLevel - 1) * 5);
+        // Level 1 = 15, naik 5 tiap level
+        quotaPerLevel = 15 + ((currentLevel - 1) * 5);
     }
 }

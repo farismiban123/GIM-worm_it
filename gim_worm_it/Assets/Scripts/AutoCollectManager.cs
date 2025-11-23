@@ -62,7 +62,7 @@ public class AutoCollectManager : MonoBehaviour
             UIManager.Instance.AddItem("Cacing");
 
             // tambah coin
-            GameData.Instance.coins += 5;
+            GameData.Instance.coins += 2;
 
             yield return new WaitForSeconds(0.1f); // jarak antar collect
         }

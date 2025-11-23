@@ -7,8 +7,7 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText; 
     public int cacingCount = 0;
-    public int semutCount = 0;
-    public int kumbangCount = 0;
+    public int isopodCount = 0;
 
     //------------ Level & Quota UI ------------
     public TextMeshProUGUI levelText;
@@ -35,13 +34,9 @@ public class UIManager : MonoBehaviour
             if (LevelManager.Instance != null)
                 LevelManager.Instance.AddWorm();
         }
-        else if (itemName == "Semut")
+        else if (itemName == "Isopod")
         {
-            semutCount++;
-        }
-        else if (itemName == "Kumbang")
-        {
-            kumbangCount++;
+            isopodCount++;
         }
 
         UpdateAllUI();
@@ -53,9 +48,8 @@ public class UIManager : MonoBehaviour
         if (scoreText != null)
         {
             scoreText.text = 
-                "Cacing: " + cacingCount + "\n" +
-                "Semut: " + semutCount + "\n" +
-                "Kumbang: " + kumbangCount;
+                ": " + cacingCount + "\n" +
+                ": " + isopodCount;
         }
 
         if (levelText != null)

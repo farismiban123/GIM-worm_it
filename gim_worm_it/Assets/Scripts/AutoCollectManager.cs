@@ -9,8 +9,10 @@ public class AutoCollectManager : MonoBehaviour
     public GameObject kantongIcon;  // Icon kantong setelah dipakai
     public Transform kantongTarget; // Target animasi cacing masuk
 
+    AudioManager audioManager;
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         Instance = this;
     }
 
@@ -91,6 +93,7 @@ public class AutoCollectManager : MonoBehaviour
         // Matikan movement agar tidak melawan animasi
         var move = cacing.GetComponent<WormMovement>();
         if (move != null) move.enabled = false;
+        audioManager.PlaySFX(audioManager.tapCacing);
 
         Vector3 start = cacing.transform.position;
         Vector3 end = kantongTarget.position;

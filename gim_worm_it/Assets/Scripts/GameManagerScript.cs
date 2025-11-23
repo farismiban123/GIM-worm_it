@@ -43,7 +43,7 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        percentageToSpawnCreature -= 0.00001f;
+        percentageToSpawnCreature -= 0.00005f;
         if(percentageToSpawnCreature < 0.1f)
         {
             WoodenStakeAnimator.SetFloat("Speed", 0);

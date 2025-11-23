@@ -122,7 +122,8 @@ public class Isopod : MonoBehaviour
             audioManager.PlaySFX(audioManager.tapCacing);
             UIManager.Instance.AddItem("Isopod");
             Destroy(gameObject); 
-            GameData.Instance.coins += 5;
+            GameData.Instance.coins -= 5;
+            if(GameData.Instance.coins < 0) GameData.Instance.coins = 0;
         }
     }
     //disable destroy buat kalo kita punya kantong ga tabrakan

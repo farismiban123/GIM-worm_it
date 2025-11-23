@@ -293,7 +293,7 @@ MonoBehaviour:
   acceleration: 1
   BagianCacing: {fileID: 2229466426244271012}
   BagianTanah: {fileID: 4582662258842262073}
-  waktuSpawn: 1.518
+  waktuSpawn: 1.25
   hasSpawned: 0
   autoCollectAllowed: 0
   autoCollectDelay: 1.519

@@ -122,7 +122,7 @@ public class WormMovement : MonoBehaviour
             audioManager.PlaySFX(audioManager.tapCacing);
             UIManager.Instance.AddItem("Cacing");
             Destroy(gameObject); 
-            GameData.Instance.coins += 5;
+            GameData.Instance.coins += 1;
         }
     }
     //disable destroy buat kalo kita punya kantong ga tabrakan

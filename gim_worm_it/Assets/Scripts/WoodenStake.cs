@@ -2,36 +2,48 @@ using UnityEngine;
 
 public class WoodenStake : MonoBehaviour
 {
-    private AudioManager audioManager;
-    private float speedMultiplier = 1f;
-    public float speedIncrement = 0.3f;
-    public float maxSpeed = 3f;
+    private AudioSource myAudioSource;
+    private Animator myAnimator;
+
+    private float minSpeedThreshold = 0.1f; 
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        myAudioSource = GetComponent<AudioSource>();
+        
+        myAnimator = GetComponent<Animator>();
     }
 
-    private void Start()
+    void Update()
     {
-        if (audioManager != null && audioManager.woodenStake != null)
+        if (Time.timeScale == 0)
         {
-            audioManager.SFXSource.clip = audioManager.woodenStake;
-            audioManager.SFXSource.loop = true;
-            audioManager.SFXSource.pitch = speedMultiplier;
-            audioManager.SFXSource.Play();
+            if (myAudioSource.isPlaying)
+            {
+                myAudioSource.Pause();
+            }
+            return; 
+        }
+
+        float currentSpeed = myAnimator.GetFloat("Speed");
+
+        if (currentSpeed > minSpeedThreshold)
+        {
+            if (!myAudioSource.isPlaying)
+            {
+                myAudioSource.UnPause(); 
+                if (!myAudioSource.isPlaying) myAudioSource.Play(); 
+            }
+
+            myAudioSource.pitch = 0.8f + (currentSpeed * 0.1f);
+        }
+        else
+        {
+            if (myAudioSource.isPlaying)
+            {
+                myAudioSource.Stop();
+            }
         }
     }
-
-    public void OnClick()
-    {
-        if (audioManager != null && audioManager.SFXSource.isPlaying)
-        {
-            speedMultiplier += speedIncrement;
-            if (speedMultiplier > maxSpeed)
-                speedMultiplier = maxSpeed;
-
-            audioManager.SFXSource.pitch = speedMultiplier;
-        }
-    }
+    
 }

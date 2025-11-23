@@ -21,7 +21,7 @@ public class GameData : MonoBehaviour
 	//---------------------------------Level dan kuota
 
 	public int currentLevel = 1;    // mulai dari level 1
-	public int quotaPerLevel = 30;  // quota awal
+	public int quotaPerLevel = 15;  // quota awal
 	public float levelTime = 30f; 
 	public int coinsBeforeLevel = 0;
 
@@ -43,7 +43,7 @@ public class GameData : MonoBehaviour
 
 	public void UpdateQuota()
     {
-        // Level 1 = 30, naik 5 tiap level
-        quotaPerLevel = 30 + ((currentLevel - 1) * 5);
+        // Level 1 = 15, naik 5 tiap level
+        quotaPerLevel = 15 + ((currentLevel - 1) * 5);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
@@ -38,7 +39,6 @@ public class SceneLoader : MonoBehaviour
 
     public void Pause()
     {
-        //if (clickArea != null) clickArea.SetActive(false); gak butuh, input ada di input handler
 
         pauseMenuPanel.SetActive(true);
         pauseMenu.SetActive(true);
@@ -49,8 +49,6 @@ public class SceneLoader : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         pauseMenuPanel.SetActive(false);
-
-        //if (clickArea != null) clickArea.SetActive(true); gak butuh, input ada di input handler
 
         Time.timeScale = 1;
     }

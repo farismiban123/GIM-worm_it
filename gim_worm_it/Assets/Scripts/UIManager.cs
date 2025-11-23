@@ -48,8 +48,8 @@ public class UIManager : MonoBehaviour
         if (scoreText != null)
         {
             scoreText.text = 
-                "Cacing: " + cacingCount + "\n" +
-                "Isopod: " + isopodCount;
+                ": " + cacingCount + "\n" +
+                ": " + isopodCount;
         }
 
         if (levelText != null)

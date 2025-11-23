@@ -13,8 +13,8 @@ public class GameEndUI : MonoBehaviour
 
         // Tampilkan ke UI
         resultText.text =
-            "Cacing: " + cacing + "\n" +
-            "Isopod: " + isopod;
+            ": " + cacing + "\n" +
+            ": " + isopod;
     }
 
     public void NextLevel()

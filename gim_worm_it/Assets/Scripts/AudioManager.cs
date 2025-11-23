@@ -1,9 +1,13 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
+
+    public static AudioManager Instance;
+
     [Header ("--- Audio Slider ---")]
     public Slider volumeSlider;
     
@@ -18,10 +22,28 @@ public class AudioManager : MonoBehaviour
     public AudioClip tapMenu;
     public AudioClip woodenStake;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     private void Start()
     {
+        if (!musicSource.isPlaying)
+        {
         musicSource.clip = background;
+        musicSource.loop = true;
         musicSource.Play();
+        }
 
         if (!PlayerPrefs.HasKey("soundVolume"))
         {
@@ -43,18 +65,25 @@ public class AudioManager : MonoBehaviour
 
     public void SetVolume()
     {
-        AudioListener.volume = volumeSlider.value;
-        SaveVolume();
+        if(volumeSlider != null)
+        {
+            AudioListener.volume = volumeSlider.value;
+            SaveVolume();
+        }
     }
 
     private void SaveVolume()
     {
-        PlayerPrefs.SetFloat("soundVolume", volumeSlider.value);
+        if (volumeSlider != null)
+            PlayerPrefs.SetFloat("soundVolume", volumeSlider.value);
     }
 
     private void LoadVolume()
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("soundVolume");
-        AudioListener.volume = volumeSlider.value;
-    }
+        float vol = PlayerPrefs.GetFloat("soundVolume");
+        AudioListener.volume = vol;
+
+        if (volumeSlider != null)
+            volumeSlider.value = vol;
+    }    
 }

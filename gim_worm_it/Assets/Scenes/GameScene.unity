@@ -1461,8 +1461,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -952.27, y: -543.09}
-  m_SizeDelta: {x: 1.0695, y: 0.2013}
+  m_AnchoredPosition: {x: -952.36, y: -543.5}
+  m_SizeDelta: {x: 0.849, y: 0.189}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &738642268
 GameObject:
@@ -1800,8 +1800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameData
   fincacingCount: 0
-  finsemutCount: 0
-  finkumbangCount: 0
+  finisopodCount: 0
   coins: 0
   wormUpgradeLevel: 1
   wormUpgradeCost: 20
@@ -2462,7 +2461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1193848380}
-  - component: {fileID: 1193848379}
+  - component: {fileID: 1193848381}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -2470,24 +2469,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1193848379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193848378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cef7c604c7e387648b40963c258c90d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  scoreText: {fileID: 1851962265}
-  cacingCount: 0
-  semutCount: 0
-  kumbangCount: 0
-  levelText: {fileID: 1942963637}
-  quotaText: {fileID: 1646771204}
 --- !u!4 &1193848380
 Transform:
   m_ObjectHideFlags: 0
@@ -2503,6 +2484,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1193848381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193848378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cef7c604c7e387648b40963c258c90d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  scoreText: {fileID: 1851962265}
+  cacingCount: 0
+  isopodCount: 0
+  levelText: {fileID: 1942963637}
+  quotaText: {fileID: 1646771204}
 --- !u!1 &1290583697
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,8 +3618,6 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Cacing: 0
 
-    Kelabang: 0
-
     Isopod: 0
 
 '
@@ -3651,8 +3647,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3719,7 +3715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -738, y: 373}
+  m_AnchoredPosition: {x: -738, y: 355.79}
   m_SizeDelta: {x: 380.0509, y: 231.3435}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1885362033

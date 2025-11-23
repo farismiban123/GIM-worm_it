@@ -13,6 +13,8 @@ public class SceneLoader : MonoBehaviour
     public Animator transitionAnimator;
     public float transitionTime = 1f;
 
+    public static string lastSceneBeforeShop = "";
+
     public void QuitGame()
     {
         Application.Quit();
@@ -28,12 +30,20 @@ public class SceneLoader : MonoBehaviour
 
     public void ShopMenu()
     {
+        //simpan scene before shop
+         SceneLoader.lastSceneBeforeShop = SceneManager.GetActiveScene().name;
+
         StartCoroutine(LoadLevel("ShopMenu"));
     }
 
     public void Back()
     {
-        StartCoroutine(LoadLevel("GameEnd"));
+         string target = SceneLoader.lastSceneBeforeShop;
+
+        if (string.IsNullOrEmpty(target))
+            target = "StartMenu"; // fallback kalau kosong
+
+        StartCoroutine(LoadLevel(target));
     }
 
 

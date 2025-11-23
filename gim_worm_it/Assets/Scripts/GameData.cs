@@ -5,8 +5,7 @@ public class GameData : MonoBehaviour
 	//---------------------------------Makhluk
 	public static GameData Instance;
     public int fincacingCount = 0;
-    public int finsemutCount = 0;
-    public int finkumbangCount = 0;
+    public int finisopodCount = 0;
 
 	//--------------------------------- KOIN
 	public int coins = 0;                  // Koin pemain

@@ -82,8 +82,7 @@ public class LevelManager : MonoBehaviour
             if (UIManager.Instance != null)
             {
                 UIManager.Instance.cacingCount = 0;
-                UIManager.Instance.semutCount = 0;
-                UIManager.Instance.kumbangCount = 0;
+                UIManager.Instance.isopodCount = 0;
             }
 
             if (GameData.Instance != null)

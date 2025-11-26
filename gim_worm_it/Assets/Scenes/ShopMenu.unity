@@ -292,8 +292,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 291.57642, y: 212.17346}
-  m_SizeDelta: {x: 490.2762, y: 95.4568}
+  m_AnchoredPosition: {x: 355.61206, y: 216.97614}
+  m_SizeDelta: {x: 618.3474, y: 85.8515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &58679155
 MonoBehaviour:
@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dengan Mengupgrade Tanah Persentasi Cacing Muncul akan Naik sebanyak 5%
+  m_text: Persentasi cacing muncul akan naik sebanyak 5%
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a366f08b10a2b34eb5c95c9a3cde84a, type: 2}
   m_sharedMaterial: {fileID: 4417693051590972138, guid: 9a366f08b10a2b34eb5c95c9a3cde84a, type: 2}
@@ -1448,8 +1448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kantung Ajaib yang dapat  secara otomatis mengambil para makhluk tanah.
-    WOW (Maksimal 15)
+  m_text: Secara otomatis mengambil para makhluk tanah (maksimal 15)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a366f08b10a2b34eb5c95c9a3cde84a, type: 2}
   m_sharedMaterial: {fileID: 4417693051590972138, guid: 9a366f08b10a2b34eb5c95c9a3cde84a, type: 2}
@@ -1692,7 +1691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.55322, y: 0}
+  m_AnchoredPosition: {x: -132, y: -2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &687473821
@@ -2083,7 +2082,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kantung Ajaib
+  m_text: Kantong Ajaib
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a366f08b10a2b34eb5c95c9a3cde84a, type: 2}
   m_sharedMaterial: {fileID: 4417693051590972138, guid: 9a366f08b10a2b34eb5c95c9a3cde84a, type: 2}
@@ -2799,7 +2798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 57.446777, y: 0}
+  m_AnchoredPosition: {x: 17, y: -2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471615922
@@ -2822,7 +2821,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Potion Owned: 0'
+  m_text: 'Kantong Ajaib Owned: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a366f08b10a2b34eb5c95c9a3cde84a, type: 2}
   m_sharedMaterial: {fileID: 4417693051590972138, guid: 9a366f08b10a2b34eb5c95c9a3cde84a, type: 2}
@@ -2887,7 +2886,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -83.7782, w: 0}
+  m_margin: {x: 0, y: 0, z: -149.41467, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

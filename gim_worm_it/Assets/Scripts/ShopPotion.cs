@@ -6,7 +6,7 @@ public class ShopPotion : MonoBehaviour
     public TextMeshProUGUI costText;
     public TextMeshProUGUI potionOwnedText;
 
-    int cost = 50;
+    int cost = 60;
 
     void Start()
     {

@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+
 public class InputHandler : MonoBehaviour
 {
     private Camera _mainCamera;
+    public CoinsTambah coinsTambah; 
 
     private void Awake()
     {
@@ -28,6 +30,9 @@ public class InputHandler : MonoBehaviour
             if (clickedObject.CompareTag("Cacing"))
             {
                 Debug.Log("Cacing");
+                GameData.Instance.coins += 2;         
+                coinsTambah.ShowText("+2", Color.green); 
+
                 if (UIManager.Instance != null)
                 {
                     // Panggil fungsi klik di cacing
@@ -40,6 +45,9 @@ public class InputHandler : MonoBehaviour
             if (clickedObject.CompareTag("Isopod"))
             {
                 Debug.Log("Isopod");
+                GameData.Instance.coins -= 4;       
+                coinsTambah.ShowText("-4", Color.red);
+                
                 if (UIManager.Instance != null)
                 {
                     // Panggil fungsi klik di isopod

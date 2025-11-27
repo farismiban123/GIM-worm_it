@@ -10,12 +10,21 @@ public class GameData : MonoBehaviour
 	//--------------------------------- KOIN
 	public int coins = 0;                  // Koin pemain
 	public int wormUpgradeLevel = 1;       // Level upgrade mulai dari 1
-	public int wormUpgradeCost = 20;       // Harga pertama 20 coin
+	public int wormUpgradeCost = 30;       // Harga pertama 20 coin
 
 
 	//---------------------------------POTION
 	public int potionCount = 0;
 	public int maxAutoCollect = 15;
+
+	public int maxPotionUsePerLevel = 3;
+	public int potionUsedThisLevel = 0;
+	public float potionDuration = 5f;
+
+	public int baseQuota = 10;
+	public int quotaIncreasePerLevel = 2;
+	
+
 
 	//---------------------------------Level dan kuota
 
@@ -42,7 +51,7 @@ public class GameData : MonoBehaviour
 
 	public void UpdateQuota()
     {
-        // Level 1 = 15, naik 5 tiap level
-        quotaPerLevel = 15 + ((currentLevel - 1) * 5);
+        quotaPerLevel = baseQuota + ((currentLevel - 1) * quotaIncreasePerLevel);
+
     }
 }

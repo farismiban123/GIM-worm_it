@@ -26,16 +26,23 @@ public class WormMovement : MonoBehaviour
     public float waktuSpawn = 1.519f;
     float time = 0f;
     [HideInInspector] public bool hasSpawned = false;
-    bool canClick = false;
+    public bool canClick = false;
+
 
 
     //------------autocollect allowed
     public bool autoCollectAllowed = false;  
     public float autoCollectDelay; 
 
+    public bool canClickReady()
+    {
+        return canClick;
+    }
+
+
     bool disableDestroy = false; 
 
-    //---------------------------------
+   
     void Start()
     {
         currentSpeed = startSpeed;
@@ -43,7 +50,7 @@ public class WormMovement : MonoBehaviour
         tanahAnimator = BagianTanah.GetComponent<Animator>();
         wormCollider = GetComponent<Collider2D>();
 
-        autoCollectDelay = waktuSpawn;
+        autoCollectDelay = waktuSpawn + 0.25f;
 
         StartCoroutine(AutoCollectDelayRoutine());
     }

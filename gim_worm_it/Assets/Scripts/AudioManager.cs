@@ -40,9 +40,9 @@ public class AudioManager : MonoBehaviour
     {
         if (!musicSource.isPlaying)
         {
-        musicSource.clip = background;
-        musicSource.loop = true;
-        musicSource.Play();
+            musicSource.clip = background;
+            musicSource.loop = true;
+            musicSource.Play();
         }
 
         if (!PlayerPrefs.HasKey("soundVolume"))
@@ -50,10 +50,14 @@ public class AudioManager : MonoBehaviour
             PlayerPrefs.SetFloat("sooundVolume", 10);
             LoadVolume();
         }
+
         else
         {
             LoadVolume();
         }
+
+        AudioListener.volume = 1f;
+        if (volumeSlider != null) volumeSlider.value = 1f;
     }
 
     public void PlaySFX(AudioClip clip)

@@ -109,10 +109,10 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.6666667
+  - time: 0.25
     functionName: CacingKeluar
     data: 
-    objectReferenceParameter: {fileID: 1128864819387495398, guid: e5394cd5e9335ab4191484c7cf02b07d, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

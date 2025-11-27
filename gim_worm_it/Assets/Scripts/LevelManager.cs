@@ -25,6 +25,9 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+
+        GameData.Instance.potionUsedThisLevel = 0;
+        
         if (GameData.Instance != null)
             GameData.Instance.UpdateQuota();
 

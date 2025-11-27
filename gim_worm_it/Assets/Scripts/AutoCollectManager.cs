@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class AutoCollectManager : MonoBehaviour
 {
@@ -8,6 +9,13 @@ public class AutoCollectManager : MonoBehaviour
     public GameObject potionButton; // Tombol pake potion
     public GameObject kantongIcon;  // Icon kantong setelah dipakai
     public Transform kantongTarget; // Target animasi cacing masuk
+
+    public TextMeshProUGUI potionStackText;
+    public TextMeshProUGUI potionTimerText;
+    private float activeTime = 0f;
+    private bool autoRunning = false;
+
+
 
     AudioManager audioManager;
     private void Awake()
@@ -18,34 +26,87 @@ public class AutoCollectManager : MonoBehaviour
 
     void Start()
     {
-        // Tombol potion hanya muncul jika punya potion
+        // reset pemakaian potion di level setiap masuk level baru
+        GameData.Instance.potionUsedThisLevel = 0;
+
+        // Tombol hanya muncul jika masih ada potion di inventory
         potionButton.SetActive(GameData.Instance.potionCount > 0);
 
-        // Kantong belum muncul sebelum dipakai
+        // Hitung slot tersedia di level
+        int slotLevel = GameData.Instance.maxPotionUsePerLevel;
+        int inventoryPotion = GameData.Instance.potionCount;
+
+        // UI selalu berdasarkan slot level
+        int displayCount = Mathf.Min(inventoryPotion, slotLevel);
+        potionStackText.text = "x" + displayCount;
+
         kantongIcon.SetActive(false);
+        potionTimerText.text = "";
     }
 
-    public void UsePotion()
+
+
+
+    void Update()
     {
-        // kalau ga ada potion gabisa
-        if (GameData.Instance.potionCount <= 0) return;
+        if (activeTime > 0)
+        {
+            activeTime -= Time.deltaTime;
+            potionTimerText.text = Mathf.Ceil(activeTime).ToString();
 
-        // kurangin potion
-        GameData.Instance.potionCount--;
-
-        // tombol ilang, muncul kantong
-        potionButton.SetActive(false);
-        kantongIcon.SetActive(true);
-
-        Debug.Log("POTION DIPAKAI — AutoCollect START");
-
-        // Mulai proses auto collect
-        StartCoroutine(AutoCollectRoutine());
+            if (!autoRunning)
+            {
+                autoRunning = true;
+                StartCoroutine(AutoCollectRoutine());
+            }
+        }
+        else
+        {
+            potionTimerText.text = "";
+            kantongIcon.SetActive(false);
+            autoRunning = false;
+        }
     }
+
+
+
+   public void UsePotion()
+{
+    if (GameData.Instance.potionUsedThisLevel >= GameData.Instance.maxPotionUsePerLevel) return;
+    if (GameData.Instance.potionCount <= 0) return;
+
+    // kurangi inventory
+    GameData.Instance.potionCount--;
+
+    // kurangi kuota pakai per level
+    GameData.Instance.potionUsedThisLevel++;
+
+    activeTime = GameData.Instance.potionDuration;
+    kantongIcon.SetActive(true);
+
+    // hitung potion TERSISA yang BISA digunakan di level ini
+    int remainingSlot = GameData.Instance.maxPotionUsePerLevel - GameData.Instance.potionUsedThisLevel;
+
+    // hitung potion TERSISA di inventory
+    int inventoryPotion = GameData.Instance.potionCount;
+
+    // UI menampilkan MIN(remainingSlot, inventoryPotion)
+    int display = Mathf.Min(remainingSlot, inventoryPotion);
+
+    potionStackText.text = "x" + display;
+
+    if (display <= 0)
+        potionButton.SetActive(false);
+}
+
+
+
+
+
 
     IEnumerator AutoCollectRoutine()
     {
-        while (true) // jalan terus sampai scene ganti
+        while (activeTime > 0) // jalan terus sampai scene ganti
         {
             GameObject cacing = FindCollectableWorm();
             if (cacing == null)
@@ -75,15 +136,15 @@ public class AutoCollectManager : MonoBehaviour
     {
         WormMovement[] worms = Object.FindObjectsByType<WormMovement>(FindObjectsSortMode.None);
 
-
         foreach (WormMovement w in worms)
         {
-            if (w != null && w.autoCollectAllowed && w.hasSpawned)
+            if (w != null && w.autoCollectAllowed && w.hasSpawned && w.canClickReady())
                 return w.gameObject;
         }
 
         return null;
     }
+
 
     //cacing terbang
     IEnumerator AnimateToBag(GameObject cacing)

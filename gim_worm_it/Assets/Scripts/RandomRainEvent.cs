@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class RandomRainEvent
+public class RandomRainEvent : MonoBehaviour
 {
-    
+    public ParticleSystem rain;
+
 }

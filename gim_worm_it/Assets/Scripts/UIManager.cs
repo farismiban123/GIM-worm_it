@@ -15,7 +15,10 @@ public class UIManager : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
     }
 
     void Start()
@@ -53,9 +56,19 @@ public class UIManager : MonoBehaviour
         }
 
         if (levelText != null)
-            levelText.text = "Level: " + GameData.Instance.currentLevel;
+        {
+            if (GameData.Instance != null)
+                levelText.text = "Level: " + GameData.Instance.currentLevel;
+            else
+                levelText.text = "Level: -";
+        }
 
         if (quotaText != null)
-            quotaText.text = "Quota: " + cacingCount + " / " + GameData.Instance.quotaPerLevel;
+        {
+            if (GameData.Instance != null)
+                quotaText.text = "Quota: " + cacingCount + " / " + GameData.Instance.quotaPerLevel;
+            else
+                quotaText.text = "Quota: " + cacingCount + " / -";
+        }
     }
 }

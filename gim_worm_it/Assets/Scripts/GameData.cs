@@ -6,6 +6,7 @@ public class GameData : MonoBehaviour
 	public static GameData Instance;
     public int fincacingCount = 0;
     public int finisopodCount = 0;
+	public bool tutorialCompleted = false;
 
 	//--------------------------------- KOIN
 	public int coins = 0;                  // Koin pemain

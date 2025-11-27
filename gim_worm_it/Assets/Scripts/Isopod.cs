@@ -122,7 +122,7 @@ public class Isopod : MonoBehaviour
             audioManager.PlaySFX(audioManager.tapCacing);
             UIManager.Instance.AddItem("Isopod");
             Destroy(gameObject); 
-            GameData.Instance.coins -= 5;
+            GameData.Instance.coins -= 4;
             if(GameData.Instance.coins < 0) GameData.Instance.coins = 0;
         }
     }

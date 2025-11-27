@@ -17,25 +17,21 @@ public class InputHandler : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (EventSystem.current.IsPointerOverGameObject()) return;
-
-            // Logika Raycast
+            // logika raycast
             var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Input.mousePosition));
             if (!rayHit.collider) return;
 
             GameObject clickedObject = rayHit.collider.gameObject;
 
-            if (clickedObject.CompareTag("Wooden Stake"))
-                return;
+            if (clickedObject.CompareTag("Wooden Stake")) return;
 
             if (clickedObject.CompareTag("Cacing"))
             {
-                Debug.Log("Cacing");
-                GameData.Instance.coins += 2;         
                 coinsTambah.ShowText("+2", Color.green); 
 
                 if (UIManager.Instance != null)
                 {
-                    // Panggil fungsi klik di cacing
+                    //panggil fungsi klik di isopod
                     var wormScript = clickedObject.GetComponent<WormMovement>();
                     if (wormScript != null) wormScript.click();
                 }
@@ -44,13 +40,10 @@ public class InputHandler : MonoBehaviour
 
             if (clickedObject.CompareTag("Isopod"))
             {
-                Debug.Log("Isopod");
-                GameData.Instance.coins -= 4;       
                 coinsTambah.ShowText("-4", Color.red);
                 
                 if (UIManager.Instance != null)
                 {
-                    // Panggil fungsi klik di isopod
                     var isopodScript = clickedObject.GetComponent<Isopod>();
                     if (isopodScript != null) isopodScript.click();
                 }
@@ -60,12 +53,7 @@ public class InputHandler : MonoBehaviour
             if (clickedObject.CompareTag("Background")) 
             {
                 GameManagerScript.Instance.ButtonPressed();
-
             }
-
-            // GameData.Instance.coins += 1;
-            // Destroy(clickedObject);
-            // Debug.Log(clickedObject.name);
         }
     }
 }
